@@ -23,6 +23,8 @@
                 <th>ID</th>
                 <th>Nome</th>
                 <th>Email</th>
+                <th>Perfil</th>
+                <th></th>
                 <th>Ações</th>
             </tr>
         </thead>
@@ -32,6 +34,13 @@
                     <td>{{ $user->id }}</td>
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
+                    <?php if ($currentUser->access_level === 1){
+                      echo "<td>Adiministrador<td>";
+                    }
+                    else {
+                      echo "<td>Usuário <td>";
+                    }
+                        ?>
                     <td>
                         @if ($currentUser->access_level === 1)
                             <a href="{{ url('users/' . $user->id . '/edit')}}" class="btn btn-success me-4">Editar</a>
