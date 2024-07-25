@@ -36,6 +36,10 @@ Funcionalidades do projeto:
 24.A página de registro exibe um formulário para o usuário inserir suas informações.
 25.O usuário deve digitar seu nome, email e senha para criar uma nova conta.
 26.Se o usuário inserir as informações corretas, ele será redirecionado para a página de dashboard. 
+27.O sistema possui uma página de edição de acesso, onde o usuário pode alterar o nível de acesso de um usuário.
+28.A página de edição de acesso exibe um formulário para o usuário alterar o nível de acesso de um usuário.
+29.O usuário deve digitar seu nome, email e senha para alterar o nível de acesso de um usuário.
+30.Se o usuário inserir as informações corretas, ele será redirecionado para a página de dashboard.
 
 Codigo:
 1- a aplicação possui 2 Controllers:
@@ -98,6 +102,7 @@ Codigo:
     - name
     - email
     - password
+    - access_level
     - created_at
     - updated_at
 a classe User possui as Funtionalidades:
