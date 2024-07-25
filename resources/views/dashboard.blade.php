@@ -27,19 +27,24 @@
             </tr>
         </thead>
         <tbody>
+          
             @foreach ($users as $user)
                 <tr>
                     <td>{{ $user->id }}</td>
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
                     <td>
-                        <a href="{{ url('users/' . $user->id . '/edit') }}" class="btn btn-success me-4">Editar</a>
-                        <form method="POST" action="{{ url('users/' . $user->id) }}" style="display:inline;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger ">Apagar</button>
-                        </form>
-                    </td>
+                        @if ($currentUser->access_level === 1)
+                            <a href="{{ url('users/' . $user->id . '/edit')}}" class="btn btn-success me-4">Editar</a>
+                            <form action="{{  url('users/' . $user->id) }}" method="POST" style="display:inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Apagar</button>
+                            </form>
+                        @else
+                            <span>Sem permissão</span>
+                        @endif
+                        </td>
                 </tr>
             @endforeach
         </tbody>
@@ -59,7 +64,6 @@
     </div>
       </div>  
         </div>    
-
        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </body>

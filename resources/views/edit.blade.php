@@ -37,6 +37,14 @@
             <label for="password_confirmation">Confirme a Senha:</label>
             <input type="password" id="password_confirmation" name="password_confirmation">
         </div>
+            <div>
+            <label for="access_level">Nível de Acesso:</label>
+            <select id="access_level" name="access_level">
+                <option value="0" {{ $user->access_level == 0 ? 'selected' : '' }}>Usuário</option>
+                <option value="1" {{ $user->access_level == 1 ? 'selected' : '' }}>Admin</option>
+            </select>
+        </div>
+
         <div>
             <button type="submit">Salvar</button>
         </div>

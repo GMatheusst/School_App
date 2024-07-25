@@ -51,6 +51,7 @@ public function login(Request $request)
         'name' => $request->name,
         'email' => $request->email,
         'password' => Hash::make($request->password),
+        'access_level' => 1,
     ]);
 
     return redirect()->intended('dashboard');
