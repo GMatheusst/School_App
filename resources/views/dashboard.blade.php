@@ -38,9 +38,7 @@
   </div>
 </div>Dashboard</h1>
    
-    @if (session('success'))
-        <div>{{ session('success') }}</div>
-    @endif
+   
     <div class="container">
       <div class="row justify-content-center">
         <div class="col">
@@ -99,6 +97,19 @@
     </div>
       </div>  
         </div>    
+        <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-4">
+        @if (session('success'))
+
+        <div class="alert alert-success text-center" role="alert">
+            {{ session('success') }}
+        </div>
+    @endif
+    </div>   
+</div>
+    </div>
+      </div>
        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </body>
