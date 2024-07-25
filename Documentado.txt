@@ -1,0 +1,137 @@
+Documentação do projeto
+Introdução:
+O sistema foi criado por min Matheus Augusto com o objetivo de criar um sistema utilizando o framework Laravel como forma de aprendizado.
+Para min mesmo:
+ao baixar o sistema abra o terminal e digite o comando: composer install
+apos a instalação realize a instalação do php e do mysql por meio do composer
+apos isso abra o diretorio do projeto digitanto o comando: cd example-app
+apos isso abra o terminal digitando o comando: php artisan serve
+
+dica: use este link ao baixar o mysql: https://dicasdeprogramacao.com.br/como-instalar-o-mysql-no-windows/
+Funcionalidades do projeto:
+
+1.A aplicação é um sistema de gerenciamento de usuários e suas informações.
+2.O sistema possui uma página inicial, onde o usuário pode acessar a página de login e registro.
+3.A página de login exibe um formulário para o usuário inserir suas credenciais de login.
+4.O usuário deve digitar seu email e senha para acessar a página de login.
+5.Se o usuário inserir as credenciais corretas, ele será redirecionado para a página de dashboard.
+6.A página de dashboard exibe uma lista de usuários cadastrados no sistema.
+7.Cada usuário pode acessar a página de edição de suas informações.
+8.A página de edição exibe um formulário para o usuário inserir suas informações.
+9.O usuário deve digitar seu nome, email e senha para atualizar suas informações.
+10.Se o usuário inserir as informações corretas, ele será redirecionado para a página de dashboard.
+11.Cada usuário pode acessar a página de apagar suas informações.
+12.A página de apagar exibe um formulário para o usuário confirmar a exclusão de suas informações.
+13.O usuário deve confirmar a exclusão de suas informações para que elas sejam apagadas.
+14.Se o usuário confirmar a exclusão de suas informações, elas serão apagadas.
+15.O sistema possui uma página de registro, onde o usuário pode criar uma nova conta.
+16.A página de registro exibe um formulário para o usuário inserir suas informações.
+17.O usuário deve digitar seu nome, email e senha para criar uma nova conta.
+18.Se o usuário inserir as informações corretas, ele será redirecionado para a página de dashboard.
+19.O sistema possui uma página de registro, onde o usuário pode criar uma nova conta.
+20.A página de registro exibe um formulário para o usuário inserir suas informações.
+21.O usuário deve digitar seu nome, email e senha para criar uma nova conta.
+22.Se o usuário inserir as informações corretas, ele será redirecionado para a página de dashboard.
+23.O sistema possui uma página de registro, onde o usuário pode criar uma nova conta.
+24.A página de registro exibe um formulário para o usuário inserir suas informações.
+25.O usuário deve digitar seu nome, email e senha para criar uma nova conta.
+26.Se o usuário inserir as informações corretas, ele será redirecionado para a página de dashboard. 
+
+Codigo:
+1- a aplicação possui 2 Controllers:
+    - AuthController
+    - UserController
+
+1.1- a classe UserController possui métodos:
+    - index
+    - edit
+    - update
+    - destroy
+  a classe UserController possui as Funcionalidades:
+    - exibir lista de usuários
+    - editar informações de um usuário
+    - atualizar informações de um usuário
+    - apagar informações de um usuário
+
+1.2- a classe AuthController possui métodos:
+    - showLoginForm
+    - login
+    - logout
+    - showRegisterForm
+    - register
+  a classe AuthController possui as Funcionalidades:
+    - exibir formulário de login
+    - fazer login
+    - fazer logout
+    - exibir formulário de registro
+    - criar novo usuário
+
+2- aplicação possui um sistema de rotas web.php
+
+2.1- a aplicação possui uma rota para cada método da classe UserController:
+    - index
+    - edit
+    - update
+    - destroy
+  a rota possui as Funtionalidades:
+    - exibir lista de usuários
+    - editar informações de um usuário
+    - atualizar informações de um usuário
+    - apagar informações de um usuário
+
+2.2- a aplicação possui uma rota para cada método da classe AuthController:
+    - showLoginForm
+    - login
+    - logout
+    - showRegisterForm
+    - register
+  a rota possui as Funtionalidades:
+    - exibir formulário de login
+    - fazer login
+    - fazer logout
+    - exibir formulário de registro
+    - criar novo usuário
+  3- a aplicação possui um modelo User.php
+
+  3.1- a classe User possui as Propriedades:
+    - id
+    - name
+    - email
+    - password
+    - created_at
+    - updated_at
+a classe User possui as Funtionalidades:
+    - criar novo usuário
+    - apagar usuário
+    - atualizar usuário
+    - exibir usuário
+    - listar usuários
+4- a aplicação possui um arquivo de configuração de banco de dados.php
+
+4.1- a classe DB possui as Propriedades:
+    - DB_CONNECTION
+    - DB_HOST
+    - DB_PORT
+    - DB_DATABASE
+    - DB_USERNAME
+    - DB_PASSWORD
+a classe DB possui as Funtionalidades:
+    - conectar ao banco de dados
+    - executar consultas
+5- a aplicação possui uma pasta com views para cada parte do front-end da aplicação.
+
+5.1- a pasta com views possui as views:
+    - auth.login
+    pagina onde o usuário pode fazer login
+    - auth.register
+    pagina onde o usuário pode criar uma nova conta
+    - dashboard
+    pagina onde o usuário pode ver a lista de usuários cadastrados
+    - edit
+    pagina onde o usuário pode editar as informações de um usuário
+    - login
+    pagina onde o usuário pode fazer login
+    - register
+    pagina onde o usuário pode criar uma nova conta
+    - welcome
+    pagina onde o usuário é redirecionado após fazer login
