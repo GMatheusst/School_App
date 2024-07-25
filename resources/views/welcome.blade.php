@@ -69,6 +69,7 @@
       <li class="list-group-item">Route</li>
       <li class="list-group-item">Controller</li>
       <li class="list-group-item">Authentication</li>
+      <li class="list-group-item">Policies</li>
        </ul> 
     </P>
     </div>
