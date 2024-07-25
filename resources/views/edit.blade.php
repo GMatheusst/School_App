@@ -8,7 +8,7 @@
     <title>Editar Usuário</title>
 </head>
 <body>
-    <h1>Editar Usuário</h1>
+    <h1 class="bg-secondary text-white mb-5 h1 shadow">Editar Usuário</h1>
 
     @if ($errors->any())
         <div>
