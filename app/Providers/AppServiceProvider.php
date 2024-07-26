@@ -12,7 +12,7 @@ class AuthServiceProvider extends ServiceProvider
     protected $policies = [
         User::class => UserPolicy::class,
     ];
-    // método boot registra os policies
+    // método boot registra o policie de acesso aos usuários
     public function boot()
     {
         $this->registerPolicies();
