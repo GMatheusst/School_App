@@ -114,12 +114,12 @@ a classe User possui as Funtionalidades:
 4- a aplicação possui um arquivo de configuração de banco de dados.php
 
 4.1- a classe DB possui as Propriedades:
-    - DB_CONNECTION
-    - DB_HOST
-    - DB_PORT
-    - DB_DATABASE
-    - DB_USERNAME
-    - DB_PASSWORD
+     DB_CONNECTION=mysql
+     DB_HOST=127.0.0.1
+     DB_PORT=3306
+     DB_DATABASE=laravel
+     DB_USERNAME=root
+     DB_PASSWORD=root
 a classe DB possui as Funtionalidades:
     - conectar ao banco de dados
     - executar consultas
