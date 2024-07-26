@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1 class="bg-secondary text-white mb-5 h1 shadow">Editar Usuário</h1>
-
+  <!-- Inicio do if -->
     @if ($errors->any())
         <div>
             <ul>
@@ -18,6 +18,7 @@
                 @endforeach
             </ul>
         </div>
+        <!-- Fim do if -->
     @endif
   <div class="container">
     <div class="row justify-content-center">

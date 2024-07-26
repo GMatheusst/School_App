@@ -28,6 +28,7 @@
     </style>
 </head>
 <body>
+  <!-- Inicio do if -->
     @if ($errors->any())
         <div class="error">
                 @foreach ($errors->all() as $error)
@@ -41,6 +42,7 @@
               </div>
                 @endforeach
         </div>
+        <!-- Fim do if -->
     @endif
         <div class="container">
             <div class="row justify-content-center">

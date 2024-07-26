@@ -54,6 +54,7 @@
             </tr>
         </thead>
         <tbody>
+            <!-- Inicio do for -->
             @foreach ($users as $user)
                 <tr>
                     <td>{{ $user->id }}</td>
@@ -67,6 +68,7 @@
                     }
                         ?>
                     <td>
+                      <!-- Inicio do if -->
                         @if ($currentUser->access_level === 1)
                             <a href="{{ url('users/' . $user->id . '/edit')}}" class="btn btn-success me-4">Editar</a>
                             <form action="{{  url('users/' . $user->id) }}" method="POST" style="display:inline;">
@@ -76,9 +78,11 @@
                             </form>
                         @else
                             <span>Sem permissão</span>
+                            <!-- Fim do if -->
                         @endif
                         </td>
                 </tr>
+                <!-- Fim do for -->
             @endforeach
         </tbody>
 
