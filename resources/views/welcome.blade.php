@@ -70,6 +70,12 @@
       <li class="list-group-item">Controller</li>
       <li class="list-group-item">Authentication</li>
       <li class="list-group-item">Policies</li>
+      <li class="list-group-item">Migrations</li>
+      <li class="list-group-item">Gates</li>
+      <li class="list-group-item">Middleware</li>
+      <li class="list-group-item">Blade</li>
+      <li class="list-group-item">Artisan</li>
+      <li class="list-group-item">Database</li>
        </ul> 
     </P>
     </div>
