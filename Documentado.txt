@@ -108,3 +108,27 @@ a classe DB possui as Funtionalidades:
     pagina onde o usuário pode criar uma nova conta
     - welcome
     pagina onde o usuário é redirecionado após fazer login
+
+6- Dentro da classe UserController existe a função index que retorna a página de dashboard com as seguintes informações:
+    - Usuários cadastrados
+    - Nome do usuário
+    - Email do usuário
+    - Perfil do usuário
+    - Ações
+
+6.1- Dependendo do nivel de acesso do usuario existe ou não as ações de editar e apagar.
+
+6.2- Caso o usario não tenha acesso de edição ou apagamento, a ação não será exibida.
+
+7- dentro do dashboard existe uma opção para editar as informações de um usuário.
+7.1- a opção de editar usuário possui as Funtionalidades:
+    - exibir a página de edição de um usuário
+    - atualizar as informações de um usuário
+
+7.2- a opção de editar pode ser acessada apenas pelo usuário com acesso de administrador.
+
+7.3 - a opção de editar pode mudar as informações:
+    - nome
+    - email
+    - senha
+    - acesso
