@@ -10,6 +10,6 @@ class UserPolicy
     // método update retorna true se o usuário atual é um admin e false caso contrário
     public function update(User $currentUser, User $user)
     {
-        return $currentUser->access_level === 1;
+        return $currentUser->access_level === 1; 
     }
 }

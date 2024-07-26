@@ -15,6 +15,6 @@ class AuthServiceProvider extends ServiceProvider
     // método boot registra o policie de acesso aos usuários
     public function boot()
     {
-        $this->registerPolicies();
+        $this->registerPolicies(); // Registra as policies
     }
 }
