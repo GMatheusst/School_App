@@ -11,7 +11,7 @@
 </head>
 <body>
     <h1 class="bg-secondary text-white mb-5 h2 shadow">
-      <button class="btn btn-primary my-1 " type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+      <button class="btn btn-primary mb-1 ms-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
   <i class="bi bi-list"></i>
 </button>
 <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
@@ -24,14 +24,14 @@
       <ul class="nav nav-pills flex-column">
     
         <li class="nav-item">
-          <a class="nav-link link-dark" href="#">Tabela a</a>
+          <a class="nav-link link-dark" href="{{ url('tabela a') }}">Tabela a</a>
         </li>
        
         <li class="nav-item">
-          <a class="nav-link link-dark" href="#">Tabela b</a>
+          <a class="nav-link link-dark" href="{{ url('tabela b') }}">Tabela b</a>
         </li> 
           <li class="nav-item">
-          <a class="nav-link link-dark" href="#">Tabela c</a>
+          <a class="nav-link link-dark" href="{{ url('tabela c') }}">Tabela c</a>
         </li>
      
     </div>
