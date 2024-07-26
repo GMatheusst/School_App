@@ -11,10 +11,8 @@ Route::get('/', function () {
 
 // rotas do dashboard
 Route::middleware('auth')->group(function (){
+Route::resource('users', UserController::class);
 Route::get('/dashboard', [UserController::class, 'index'])->name('dashboard');
-Route::get('users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
-Route::put('users/{user}', [UserController::class, 'update'])->name('users.update');
-Route::delete('users/{user}', [UserController::class, 'destroy']);
 });
 
 
