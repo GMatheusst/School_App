@@ -30,11 +30,16 @@
 <body>
     @if ($errors->any())
         <div class="error">
-            <ul>
                 @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
+                 <div class="container mt-5">
+                  <div class="row justify-content-center">
+                    <div class="col-8">
+                <div class="alert alert-danger" role="alert">
+                    {{ $error }}
+                </div>
+                </div>
+              </div>
                 @endforeach
-            </ul>
         </div>
     @endif
         <div class="container">
