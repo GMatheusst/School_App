@@ -19,7 +19,12 @@ class UserController extends Controller
     return view('dashboard', compact('users', 'currentUser')); // Retorna a página de dashboard
     }
     // metodo edit retorna a página de edição de um usuário
-    
+     public function indexHome()
+    {
+      $users = User::all(); // Obtém todos os usuários
+      $currentUser = Auth::user(); // Obtém o usuário atual
+    return view('home', compact('users', 'currentUser')); // Retorna a página de dashboard
+    }
     public function edit(User $user)
     {
         $this->authorize('update', $user); // Certifique-se de que apenas admins possam acessar isso

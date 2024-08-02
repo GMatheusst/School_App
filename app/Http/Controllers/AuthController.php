@@ -17,9 +17,18 @@ class AuthController extends Controller
 public function login(Request $request)
 {
     $credentials = $request->only('email', 'password'); // Obtém as credenciais do usuário
+    
 
     if (Auth::attempt($credentials)) { // Verifica se as credenciais do usuário são válidas
-        return redirect()->intended('dashboard'); // Redireciona para a página de dashboard
+        $user = Auth::user(); // Obtém o usuário autenticado
+        $accessLevel = $user->access_level; // Obtém o nível de acesso do usuário
+
+       if($accessLevel === 1){
+         return redirect()->intended('dashboard'); // Redireciona para a página inicial logada 
+       }
+       else{
+        return redirect()->intended('home');// Redireciona para a página de dashboard
+       }
     }
 
     return back()->withErrors([ // Retorna erros se as credenciais não forem válidas
@@ -53,7 +62,7 @@ public function login(Request $request)
         'password' => Hash::make($request->password), // Senha do usuário
         'access_level' => 0, // Nível de acesso do usuário
     ]);
-
+    
     return redirect()->intended('dashboard'); // Redireciona para a página de dashboard
 }
 

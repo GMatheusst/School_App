@@ -12,7 +12,8 @@ Route::get('/', function () {
 // rotas do dashboard
 Route::middleware('auth')->group(function (){ // Método middleware para verificar se o usuário está logado
 Route::resource('users', UserController::class); // Método resource para gerenciar usuários por meio das 4 funções crud
-Route::get('/dashboard', [UserController::class, 'index'])->name('dashboard'); // Método get para gerenciar usuários e redirecionar para a página de dashboard
+Route::get('/dashboard', [UserController::class, 'index'])->name('dashboard');
+Route::get('/home', [UserController::class, 'indexHome'])->name('home'); // Método get para gerenciar usuários e redirecionar para a página de dashboard
 });
 
 
