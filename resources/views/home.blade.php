@@ -6,6 +6,14 @@
     <title>Escola - Página Inicial</title>
     <!-- Adicione links para CSS aqui, por exemplo Bootstrap -->
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+   <style>
+    .log{
+        position: absolute;
+            top: 0;
+            right: 0;
+            padding: 20px;
+    }
+   </style>
 </head>
 <body>
     <header class="bg-dark text-white text-center py-2">
@@ -31,6 +39,14 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-light fs-4" href="{{ url('paginas/contato') }}">Contato</a>
+                        </li>
+                         <li class="nav-item ms-5">
+                           
+                            <form method="POST" action="{{ url('logout') }}">
+        @csrf
+    
+        <button type="submit" class="btn btn-dark nav-link text-light  ms-2 log"><span class="fs-4">Logout</span></button>
+    </form>
                         </li>
                     </ul>
                 </div>
