@@ -16,46 +16,41 @@
    </style>
 </head>
 <body>
-    <header class="bg-dark text-white text-center py-2">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-dark">
-                <a class="navbar-brand text-primary fs-2" href="{{ url('home') }}">Escola</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ml-auto">
-                         <li class="nav-item">
-                            <a class="nav-link text-light fs-4" href="{{ url('home') }}">Home</a>
-                        </li>
-                           <li class="nav-item">
-                            <a class="nav-link text-light fs-4" href="{{ url('paginas/alunos') }}">Alunos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light fs-4" href="{{ url('paginas/cursos') }}">Cursos</a>
-                        </li>
-                           <li class="nav-item">
-                            <a class="nav-link text-light fs-4" href="{{ url('paginas/projetos') }}">Projetos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light fs-4" href="{{ url('paginas/contato') }}">Contato</a>
-                        </li>
-                         <li class="nav-item ms-5">
-                           
-                            <form method="POST" action="{{ url('logout') }}">
-        @csrf
-    
-        <button type="submit" class="btn btn-dark nav-link text-light  ms-2 log"><span class="fs-4">Logout</span></button>
-    </form>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+       <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Logo</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="btn btn-primary" href="#" role="button">Login</a>
+              </li>
+            </ul>
+          </div>
         </div>
+      </nav>
     </header>
-
-    <main class="py-5 bg-light">
+     <main>
+    <section class="py-5 bg-light">
         <div class="container">
+            <div class="row">
+                <div class="col-md-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, odit. Enim quam consequatur obcaecati a dolor voluptas, suscipit eum, excepturi blanditiis esse, quidem magnam. Modi incidunt ea pariatur omnis exercitationem!</div>
+                <div class="col-md-6">
             <div class="jumbotron bg-white p-5 rounded shadow">
                 <h1 class="display-4 text-primary">Educação de Qualidade</h1>
                 <p class="lead text-secondary">Proporcionando o melhor aprendizado para nossos alunos.</p>
@@ -88,6 +83,10 @@
 </div>-->
             </div>
         </div>
+        </div>
+            </div>
+</section>
+
     </main>
     <footer class="bg-dark text-white text-center py-4">
             <p>&copy; 2024 Escola. Todos os direitos reservados.</p>
