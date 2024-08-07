@@ -41,8 +41,7 @@
                 <a class="nav-link" href="{{ url('contato') }}">Contato</a>
               </li>
               </ul>
-            <ul class="navbar-nav ms-auto">
-            </ul>
+   
           </div>
         </div>
       </nav>
@@ -51,18 +50,16 @@
     <section class="py-5 bg-light">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, odit. Enim quam consequatur obcaecati a dolor voluptas, suscipit eum, excepturi blanditiis esse, quidem magnam. Modi incidunt ea pariatur omnis exercitationem!</div>
                 <div class="col-md-6">
-            <div class="jumbotron bg-white p-5 rounded shadow">
-                <h1 class="display-4 text-primary">Educação de Qualidade</h1>
-                <p class="lead text-secondary">Proporcionando o melhor aprendizado para nossos alunos.</p>
-                <hr class="my-4">
-            
+                <div class="jumbotron bg-white p-5 rounded shadow">
+                    <h1 class="display-4 text-primary">Educação de Qualidade</h1>
+                    <p class="lead text-secondary">Proporcionando o melhor aprendizado para nossos alunos.</p>
+                    <hr class="my-4">
+                </div>
+                </div>
             </div>
-        </div>
-        </div>
-            </div>
-</section>
+        </div>   
+    </section>
 
     </main>
     <footer class="bg-dark text-white text-center py-4">

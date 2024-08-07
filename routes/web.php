@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Path;
 use App\Http\Controllers\UserController;
 // rotas da aplicação
 
@@ -23,3 +24,8 @@ Route::post('login', [AuthController::class, 'login']); // Método post para faz
 Route::post('logout', [AuthController::class, 'logout'])->name('logout'); // Método post para fazer logout
 Route::get('register', [AuthController::class, 'showRegisterForm'])->name('register');  // Método get para exibir a página de registro
 Route::post('register', [AuthController::class, 'register']); // Método post para criar um novo usuário
+//Rotas de páginas
+Route::get('alunos', [Path::class, 'indexA'])->name('alunos'); // Método get para exibir a página de alunos
+Route::get('cursos', [Path::class, 'indexC'])->name('cursos'); // Método get para exibir a página de cursos
+Route::get('projetos', [Path::class, 'indexP'])->name('projetos'); // Método get para exibir a página de projetos
+Route::get('contato', [Path::class, 'indexCt'])->name('contato'); // Método get para exibir a página de contato
