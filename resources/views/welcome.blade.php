@@ -1,84 +1,78 @@
 <!DOCTYPE html>
-<html>
-  <!--Pagina inicial-->
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <title>Página Inicial</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-            margin: 0;
-        }
-        .container {
-            text-align: center;
-            background: #fff;
-            padding: 40px;
-            margin: 40px;
-            border-radius: 8px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-        }
-        .button {
-            display: inline-block;
-            margin: 10px;
-            padding: 10px 20px;
-            font-size: 16px;
-            color: #fff;
-            background-color: #007bff;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s;
-        }
-        .button:hover {
-            background-color: #0056b3;
-        }
-        .header {
-            position: absolute;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escola - Página Inicial</title>
+    <!-- Adicione links para CSS aqui, por exemplo Bootstrap -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+   <style>
+    .log{
+        position: absolute;
             top: 0;
             right: 0;
             padding: 20px;
-        }
-        .header a {
-            margin: 0 10px;
-            color: #007bff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .header a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    }
+   </style>
 </head>
 <body>
+       <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Logo</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Pagina Inicial</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url('alunos') }}">Alunos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url('cursos') }}">Cursos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url('projetos') }}">Projetos</a>
+              </li>
+             <li class="nav-item">
+                <a class="nav-link" href="{{ url('contato') }}">Contato</a>
+              </li>
+              </ul>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="btn btn-primary" href="{{ url('login') }}">Login</a>
+                     <a class="btn btn-primary" href="{{ url('register') }}">Registrar</a>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+     <main>
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, odit. Enim quam consequatur obcaecati a dolor voluptas, suscipit eum, excepturi blanditiis esse, quidem magnam. Modi incidunt ea pariatur omnis exercitationem!</div>
+                <div class="col-md-6">
+            <div class="jumbotron bg-white p-5 rounded shadow">
+                <h1 class="display-4 text-primary">Educação de Qualidade</h1>
+                <p class="lead text-secondary">Proporcionando o melhor aprendizado para nossos alunos.</p>
+                <hr class="my-4">
+            
+            </div>
+        </div>
+        </div>
+            </div>
+</section>
 
-<div class="header">
-        <a href="{{ url('login') }}">Login</a>
-        <a href="{{ url('register') }}">Registrar</a>
-    </div>
-    <div class="container">
-     <h1>Site para demonstração de autenticação com laravel</h1>
-     <p>
-     <h5> Implementado até então</h5>
-      <ul class="list-group">
-      <li class="list-group-item">Route</li>
-      <li class="list-group-item">Controller</li>
-      <li class="list-group-item">Authentication</li>
-      <li class="list-group-item">Policies</li>
-      <li class="list-group-item">Migrations</li>
-      <li class="list-group-item">Gates</li>
-      <li class="list-group-item">Middleware</li>
-      <li class="list-group-item">Blade</li>
-      <li class="list-group-item">Artisan</li>
-      <li class="list-group-item">Database</li>
-       </ul> 
-    </P>
-    </div>
+    </main>
+    <footer class="bg-dark text-white text-center py-4">
+            <p>&copy; 2024 Escola. Todos os direitos reservados.</p>
+    </footer>
+    <!-- Adicione links para JS aqui, por exemplo jQuery e Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
 </body>
 </html>
