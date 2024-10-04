@@ -15,12 +15,12 @@
 >Carga Horária
 >Tempo De Conclusão
 }
-- [ ]Sobre Nós- Informações Sobre a "escola" e Colaboradores importantes
-- [ ]Menu - Login - Cadastre-se
+- [ ] Sobre Nós- Informações Sobre a "escola" e Colaboradores importantes
+- [ ] Menu - Login - Cadastre-se
 
 >Pagina inicial (Usuario comum)
-- [ ]Index - Tela com banner Cursos em Destaque 
-- [ ]Cursos - Cards Para Ver Informações do Curso
+- [ ] Index - Tela com banner Cursos em Destaque 
+- [ ] Cursos - Cards Para Ver Informações do Curso
 {
 >Nome
 >Imagem
