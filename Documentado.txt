@@ -7,7 +7,6 @@ apos a instalação realize a instalação do php e do mysql por meio do compose
 apos isso abra o diretorio do projeto digitanto o comando: cd example-app
 apos isso abra o terminal digitando o comando: php artisan serve
 
-dica: use este link ao baixar o mysql: https://dicasdeprogramacao.com.br/como-instalar-o-mysql-no-windows/
 Funcionalidades do projeto:
 Codigo:
 1- a aplicação possui 2 Controllers:
