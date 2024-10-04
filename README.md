@@ -1,7 +1,6 @@
 # Documentação
  
-## Projeto Final
-### Front-End
+## Projeto Final - Front-End
 
 ##### [Back-end](https://rentry.co/SateUrlBackEnd) Aqui
 >Pagina inicial (Usuário não cadastrado)
