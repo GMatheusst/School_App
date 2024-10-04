@@ -16,51 +16,51 @@
    </style>
 </head>
 <body>
+    <section>
        <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Logo</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Pagina Inicial</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{ url('alunos') }}">Alunos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{ url('cursos') }}">Cursos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{ url('projetos') }}">Projetos</a>
-              </li>
-             <li class="nav-item">
-                <a class="nav-link" href="{{ url('contato') }}">Contato</a>
-              </li>
-              </ul>
-   
-          </div>
-        </div>
-      </nav>
-    </header>
+          <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Logo</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Pagina Inicial</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{ url('alunos') }}">Alunos</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{ url('cursos') }}">Cursos</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{ url('projetos') }}">Projetos</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{ url('contato') }}">Contato</a>
+                    </li>
+                  </ul>
+              </div>
+            </div>
+          </nav>
+       </header>
+    </section>
      <main>
     <section class="py-5 bg-light">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                <div class="jumbotron bg-white p-5 rounded shadow">
-                    <h1 class="display-4 text-primary">Educação de Qualidade</h1>
-                    <p class="lead text-secondary">Proporcionando o melhor aprendizado para nossos alunos.</p>
-                    <hr class="my-4">
-                </div>
+                  <div class="jumbotron bg-white p-5 rounded shadow">
+                      <h1 class="display-4 text-primary">Educação de Qualidade</h1>
+                      <p class="lead text-secondary">Proporcionando o melhor aprendizado para nossos alunos.</p>
+                      <hr class="my-4">
+                  </div>
                 </div>
             </div>
         </div>   
     </section>
-
     </main>
     <footer class="bg-dark text-white text-center py-4">
             <p>&copy; 2024 Escola. Todos os direitos reservados.</p>

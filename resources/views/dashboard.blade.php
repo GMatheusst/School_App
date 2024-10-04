@@ -11,82 +11,80 @@
 </head>
 <body>
     <h1 class="bg-secondary text-white mb-5 h2 shadow">
-      <button class="btn btn-primary mb-1 ms-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
-  <i class="bi bi-list"></i>
-</button>
-<div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="staticBackdropLabel">MENU </h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body">
-    <div>
-      <ul class="nav nav-pills flex-column">
-    
-        <li class="nav-item">
-          <a class="nav-link link-dark" href="{{ url('tabela a') }}">Tabela a</a>
-        </li>
-       
-        <li class="nav-item">
-          <a class="nav-link link-dark" href="{{ url('tabela b') }}">Tabela b</a>
-        </li> 
-          <li class="nav-item">
-          <a class="nav-link link-dark" href="{{ url('tabela c') }}">Tabela c</a>
-        </li>
-     
-    </div>
-  </div>
-</div>Dashboard</h1>
-   
-   
+      <button class="btn btn-primary mb-1 ms-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"><i class="bi bi-list"></i></button>
+        <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="staticBackdropLabel">MENU</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <div>
+              <ul class="nav nav-pills flex-column">
+            
+                <li class="nav-item">
+                  <a class="nav-link link-dark" href="{{ url('tabela a') }}">Tabela a</a>
+                </li>
+              
+                <li class="nav-item">
+                  <a class="nav-link link-dark" href="{{ url('tabela b') }}">Tabela b</a>
+                </li> 
+                  <li class="nav-item">
+                  <a class="nav-link link-dark" href="{{ url('tabela c') }}">Tabela c</a>
+                </li>
+            
+            </div>
+          </div>
+        </div>
+        Dashboard
+    </h1>  
     <div class="container">
       <div class="row justify-content-center">
         <div class="col">
-    <table class="table border-dark table-hover" > 
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Email</th>
-                <th>Perfil</th>
-                <th></th>
-                <th>Ações</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Inicio do for -->
-            @foreach ($users as $user)
-                <tr>
-                    <td>{{ $user->id }}</td>
-                    <td>{{ $user->name }}</td>
-                    <td>{{ $user->email }}</td>
-                    <?php if ($user->access_level === 1){
-                      echo "<td>Adiministrador<td>";
-                    }
-                    else {
-                      echo "<td>Usuário <td>";
-                    }
-                        ?>
-                    <td>
-                      <!-- Inicio do if -->
-                        @if ($currentUser->access_level === 1)
-                            <a href="{{ url('users/' . $user->id . '/edit')}}" class="btn btn-success me-4">Editar</a>
-                            <form action="{{  url('users/' . $user->id) }}" method="POST" style="display:inline;">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Apagar</button>
-                            </form>
-                        @else
-                            <span>Sem permissão</span>
-                            <!-- Fim do if -->
-                        @endif
-                        </td>
-                </tr>
-                <!-- Fim do for -->
-            @endforeach
-        </tbody>
+          <table class="table border-dark table-hover" > 
+              <thead>
+                  <tr>
+                      <th>ID</th>
+                      <th>Nome</th>
+                      <th>Email</th>
+                      <th>Perfil</th>
+                      <th></th>
+                      <th>Ações</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <!-- Inicio do for -->
+                  @foreach ($users as $user)
+                      <tr>
+                          <td>{{ $user->id }}</td>
+                          <td>{{ $user->name }}</td>
+                          <td>{{ $user->email }}</td>
+                          <?php if ($user->access_level === 1){
+                            echo "<td>Adiministrador<td>";
+                          }
+                          else {
+                            echo "<td>Usuário <td>";
+                          }
+                              ?>
+                          <td>
+                            <!-- Inicio do if -->
+                              @if ($currentUser->access_level === 1)
+                                  <a href="{{ url('users/' . $user->id . '/edit')}}" class="btn btn-success me-4">Editar</a>
+                                  <form action="{{  url('users/' . $user->id) }}" method="POST" style="display:inline;">
+                                      @csrf
+                                      @method('DELETE')
+                                      <button type="submit" class="btn btn-danger">Apagar</button>
+                                  </form>
+                              @else
+                                  <span>Sem permissão</span>
+                                  <!-- Fim do if -->
+                              @endif
+                              </td>
+                      </tr>
+                      <!-- Fim do for -->
+                  @endforeach
+              </tbody>
 
-    </table>
+          </table>
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-2">
@@ -98,9 +96,9 @@
     </div>   
 </div>
     </div>
-    </div>
+        </div>
       </div>  
-        </div>    
+    </div>    
         <div class="container">
       <div class="row justify-content-center">
         <div class="col-4">

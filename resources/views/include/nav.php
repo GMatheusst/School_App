@@ -6,7 +6,7 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ">
-            <li class="nav-item">
+              <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
@@ -18,13 +18,12 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">Contact</a>
               </li>
-              </ul>
+            </ul>
             <ul class="navbar-nav ms-auto">
-              
               <li class="nav-item">
                 <a class="btn btn-primary" href="#" role="button">Login</a>
               </li>
             </ul>
           </div>
         </div>
-      </nav>
+</nav>

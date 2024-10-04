@@ -16,7 +16,7 @@
    </style>
 </head>
 <body>
-       <header>
+    <header>
       <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Logo</a>
@@ -50,24 +50,26 @@
         </div>
       </nav>
     </header>
-     <main>
+
+    <main>
     <section class="py-5 bg-light">
         <div class="container">
-            <div class="row">
+          <div class="row">
                 <div class="col-md-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, odit. Enim quam consequatur obcaecati a dolor voluptas, suscipit eum, excepturi blanditiis esse, quidem magnam. Modi incidunt ea pariatur omnis exercitationem!</div>
                 <div class="col-md-6">
-            <div class="jumbotron bg-white p-5 rounded shadow">
+                  <div class="jumbotron bg-white p-5 rounded shadow">
                 <h1 class="display-4 text-primary">Educação de Qualidade</h1>
                 <p class="lead text-secondary">Proporcionando o melhor aprendizado para nossos alunos.</p>
                 <hr class="my-4">
             
-            </div>
+                  </div>
         </div>
+          </div>
         </div>
-            </div>
-</section>
+    </section>
 
     </main>
+  
     <footer class="bg-dark text-white text-center py-4">
             <p>&copy; 2024 Escola. Todos os direitos reservados.</p>
     </footer>
