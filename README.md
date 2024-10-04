@@ -1,9 +1,9 @@
-#Documentação
+# Documentação
  
-##Projeto Final
-###Front-End
+## Projeto Final
+### Front-End
 
-#####[Back-end](https://rentry.co/SateUrlBackEnd) Aqui
+##### [Back-end](https://rentry.co/SateUrlBackEnd) Aqui
 >Pagina inicial (Usuário não cadastrado)
 - [ ] Index - Tela com banner Cursos em Destaque 
 - [ ] Cursos - Cards Para Ver Informações do Curso (não comprável)
@@ -30,12 +30,12 @@
 >Carga Horária
 >Carrinho
 }
-- [ ]Sobre Nós- Informações Sobre a "escola" e Colaboradores importantes
-- [ ]Menu - Sair - Área do Aluno - Carrinho
+- [ ] Sobre Nós- Informações Sobre a "escola" e Colaboradores importantes
+- [ ] Menu - Sair - Área do Aluno - Carrinho
 
 >Pagina inicial (Tutor)
-- [ ]Index - Tela com banner Cursos em Destaque 
-- [ ]Cursos - Cards Para Ver Informações do Curso
+- [ ] Index - Tela com banner Cursos em Destaque 
+- [ ] Cursos - Cards Para Ver Informações do Curso
 {
 >Nome
 >Imagem
@@ -44,42 +44,42 @@
 >Carga Horária
 >Carrinho
 }
-- [ ]Sobre Nós- Informações Sobre a "escola" e Colaboradores importantes
-- [ ]Menu - Sair - Área do Professor  - Carrinho
+- [ ] Sobre Nós- Informações Sobre a "escola" e Colaboradores importantes
+- [ ] Menu - Sair - Área do Professor  - Carrinho
 
 >Pagina inicial (Adm/AdmMaster)
-- [ ]Index - Tela com banner Cursos em Destaque 
-- [ ]Cursos - Cards Para Ver Informações do Curso
-- [ ]Sobre Nós- Informações Sobre a "escola" e Colaboradores importantes
-- [ ]Menu - Sair - DashBoard
+- [ ] Index - Tela com banner Cursos em Destaque 
+- [ ] Cursos - Cards Para Ver Informações do Curso
+- [ ] Sobre Nós- Informações Sobre a "escola" e Colaboradores importantes
+- [ ] Menu - Sair - DashBoard
 
 >Carrinho / Pedidos
-- [ ]Criação de carrinho
-- [ ]Edição de carrinho
-- [ ]Fazer um pedido dos produtos adicionados
-- [ ]Finalizar ou cancelar um pedido 
+- [ ] Criação de carrinho
+- [ ] Edição de carrinho
+- [ ] Fazer um pedido dos produtos adicionados
+- [ ] Finalizar ou cancelar um pedido 
 
 >Cadastro / Login
-- [ ]Formulário
-- [ ]Fundo 
+- [ ] Formulário
+- [ ] Fundo 
 
 >Área do Aluno
-- [ ]Cursos
+- [ ] Cursos
 {
-- [ ]Carga horária
-- [ ]Informações
-- [ ]Frequência / Nota ( PYTHON )
-- [ ]Tarefas
+- [ ] Carga horária
+- [ ] Informações
+- [ ] Frequência / Nota ( PYTHON )
+- [ ] Tarefas
 }
 
 >Área do Professor
-- [ ]Salas de aula
+- [ ] Salas de aula
 {
-- [ ]Carga horária
-- [ ]Informações
-- [ ]Frequência / Nota ( PYTHON ) Geral
-- [ ]Frequência / Nota ( PYTHON )  Do Aluno
-- [ ]Criação de Tarefas
+- [ ] Carga horária
+- [ ] Informações
+- [ ] Frequência / Nota ( PYTHON ) Geral
+- [ ] Frequência / Nota ( PYTHON )  Do Aluno
+- [ ] Criação de Tarefas
 }
 
 >Dash
