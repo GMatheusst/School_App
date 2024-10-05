@@ -2,7 +2,8 @@
  
 ## Projeto Final - Front-End
 
-##### [Back-end](https://rentry.co/SateUrlBackEnd) Aqui
+##### [Tabela](https://rentry.co/SateUrlBackEnd) Aqui
+##### [Back-End](https://rentry.co/SateUrlLaravel) Aqui
 >Pagina inicial (Usuário não cadastrado)
 - [ ] Index - Tela com banner Cursos em Destaque 
 - [ ] Cursos - Cards Para Ver Informações do Curso (não comprável)
