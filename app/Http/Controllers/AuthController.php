@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreUserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -52,13 +53,8 @@ class AuthController extends Controller
     }
 
     // metodo register cria um novo usuário
-    public function register(Request $request)
+    public function register(StoreUserRequest $request)
     {
-        $request->validate([ // Validação dos dados enviados
-            'name' => 'required|string|max:255', // Nome obrigatório e com tamanho máximo de 255 caracteres
-            'email' => 'required|string|email|max:255|unique:users', // Email obrigatório, com tamanho máximo de 255 caracteres e deve ser único
-            'password' => 'required|string|min:8|confirmed', // Senha obrigatória, com tamanho mínimo de 8 caracteres e deve ser confirmada
-        ]);
 
         User::create([  // Cria um novo usuário
             'name' => $request->name, // Nome do usuário

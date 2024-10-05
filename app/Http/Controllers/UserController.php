@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpdateUserRequest;
 use App\Models\User;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
@@ -30,28 +31,13 @@ class UserController extends Controller
         return view('home', compact('users', 'currentUser')); // Retorna a página de dashboard
     }
 
-    public function edit(User $user)
-    {
-        $this->authorize('update', $user); // Certifique-se de que apenas admins possam acessar isso
-
-        return view('edit', compact('user')); // Retorna a página de edição
-    }
 
     // metodo update atualiza os dados de um usuário
-    public function update(Request $request, User $user)
+    public function update(UpdateUserRequest $request, User $user)
     {
         $this->authorize('update', $user); // Certifique-se de que apenas admins possam acessar isso
 
-        $request->validate([ // Validação dos dados enviados
-            'name' => 'required|string|max:255', // Nome obrigatório e com tamanho máximo de 255 caracteres
-            'email' => 'required|string|email|max:255|unique:users,email,'.$user->id, // Email obrigatório, com tamanho máximo de 255 caracteres e deve ser único
-            'access_level' => 'required|integer|in:0,1', // Nível de acesso obrigatório e deve ser 0 ou 1
-        ]);
-
-        $user->name = $request->name; // Atualiza o nome do usuário
-        $user->email = $request->email; // Atualiza o email do usuário
-        $user->access_level = $request->access_level; // Atualiza o nível de acesso do usuário
-        $user->save(); // Salva os dados atualizados
+        $user->update($request->validated());
 
         return redirect()->route('dashboard')->with('success', 'Usuário atualizado com sucesso!'); // Redireciona para a página de dashboard com sucesso
     }
