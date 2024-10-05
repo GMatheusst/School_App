@@ -9,10 +9,10 @@ class UpdateWorksRequest extends FormRequest
     public function rules()
     {
         return [
-            'curso_id' => 'nullable|exists:cursos,id',
-            'work' => 'nullable|string|max:255',
-            'value' => 'nullable|numeric',
-            'valid_until' => 'nullable|date',
+            'curso_id' => 'sometimes|exists:cursos,id',
+            'work' => 'sometimes|string|max:255',
+            'value' => 'sometimes|numeric',
+            'valid_until' => 'sometimes|date',
         ];
     }
 }

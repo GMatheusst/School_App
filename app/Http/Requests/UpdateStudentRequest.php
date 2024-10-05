@@ -9,8 +9,8 @@ class UpdateStudentRequest extends FormRequest
     public function rules()
     {
         return [
-            'user_id' => 'nullable|exists:users,id',
-            'status' => 'nullable|integer|in:0,1,2',
+            'user_id' => 'sometimes|exists:users,id',
+            'status' => 'sometimes|integer|in:0,1,2',
         ];
     }
 }

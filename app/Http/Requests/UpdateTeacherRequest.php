@@ -9,8 +9,8 @@ class UpdateTeacherRequest extends FormRequest
     public function rules()
     {
         return [
-            'user_id' => 'nullable|exists:users,id',
-            'curso_id' => 'nullable|exists:cursos,id',
+            'user_id' => 'sometimes|exists:users,id',
+            'curso_id' => 'sometimes|exists:cursos,id',
         ];
     }
 }

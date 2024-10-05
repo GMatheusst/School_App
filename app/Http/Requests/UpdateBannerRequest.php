@@ -9,8 +9,8 @@ class UpdateBannerRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'nullable|string|max:255',
-            'img_url' => 'nullable|string|max:255',
+            'name' => 'sometimes|string|max:255',
+            'img_url' => 'sometimes|string|max:255',
         ];
     }
 }

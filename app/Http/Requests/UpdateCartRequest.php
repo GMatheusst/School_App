@@ -9,8 +9,8 @@ class UpdateCartRequest extends FormRequest
     public function rules()
     {
         return [
-            'user_id' => 'nullable|exists:users,id',
-            'total_price' => 'nullable|numeric',
+            'user_id' => 'somtimes|exists:users,id',
+            'total_price' => 'somtimes|numeric',
         ];
     }
 }
