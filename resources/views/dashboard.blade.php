@@ -58,7 +58,7 @@
                           <td>{{ $user->id }}</td>
                           <td>{{ $user->name }}</td>
                           <td>{{ $user->email }}</td>
-                          <?php if ($user->access_level === 1){
+                          <?php if ($user->access_level > 2){
                             echo "<td>Adiministrador<td>";
                           }
                           else {
