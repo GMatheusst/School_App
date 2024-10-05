@@ -6,12 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class StoreOrderRequest extends FormRequest
 {
-    public function authorize()
-    {
-        return true;
-    }
-
-    public function rules()
+public function rules()
     {
         return [
             'user_id' => 'required|exists:users,id',
