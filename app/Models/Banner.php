@@ -8,8 +8,5 @@ class Banner extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'name',
-        'img_url',
-    ];
+    protected $guarded = [];
 }

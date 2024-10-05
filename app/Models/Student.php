@@ -8,10 +8,7 @@ class Student extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'user_id',
-        'status',
-    ];
+    protected $guarded = [];
 
     public function user()
     {

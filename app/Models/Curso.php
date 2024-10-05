@@ -9,14 +9,7 @@ class Curso extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = [
-        'name',
-        'description',
-        'price',
-        'img',
-        'in_stock',
-        'workload',
-    ];
+    protected $guarded = [];
 
     public function teacher()
     {
