@@ -16,10 +16,6 @@ Route::middleware('auth')->group(function () { // Método middleware para verifi
     Route::resource('users', UserController::class); // Método resource para gerenciar usuários por meio das 4 funções crud
     Route::get('/dashboard', [UserController::class, 'index'])->name('dashboard');
     Route::get('/home', [UserController::class, 'index'])->name('home'); // Método get para gerenciar usuários e redirecionar para a página de dashboard
-    Route::get('alunos', [Path::class, 'alunos'])->name('alunos'); // Método get para exibir a página de alunos
-    Route::get('cursos', [Path::class, 'cursos'])->name('cursos'); // Método get para exibir a página de cursos
-    Route::get('colaboradores', [Path::class, 'colaborador'])->name('colaborador'); // Método get para exibir a página de contato
-    Route::get('sobre', [AuthController::class, 'sobre'])->name('sobre'); // Método post para fazer logout
     Route::post('logout', [AuthController::class, 'logout'])->name('logout'); // Método post para fazer logout
 });
 
