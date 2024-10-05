@@ -11,19 +11,20 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('banner', function (Blueprint $table) {
             $table->id();
             $table->string('name', 255);
-            $table->string('password');
-            $table->string('email', 255)->unique();
-            $table->string('img', 255)->nullable();
-            $table->integer('access_level'); // 0: Não autenticado, 1: Aluno, 2: Professor, 3: Adm, 4: Adm Master
+            $table->string('img_url', 255);
             $table->timestamps();
         });
     }
+    
 
+    /**
+     * Reverse the migrations.
+     */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('banner');
     }
 };
