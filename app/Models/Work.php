@@ -9,12 +9,7 @@ class Work extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'curso_id',
-        'work',
-        'value',
-        'valid_until',
-    ];
+    protected $guarded = [];
 
     public function curso()
     {
