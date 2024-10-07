@@ -1,26 +1,48 @@
 <?php
-
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\Path;
+use App\Http\Controllers\BannerController;
+use App\Http\Controllers\CursOController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\UserController;
 
-// rotas da aplicação
 
-// rotas de página inicial
-Route::get('/', function () {
-    return view('welcome');
+// Rotas para usuários não autenticados
+Route::get('/', [BannerController::class, 'index'])->name('home');
+Route::get('/cursos', [CursoController::class, 'index'])->name('cursos');
+Route::get('/sobre', function () {
+    return view('about'); // Página estática
+});
+Route::get('/login', [AuthController::class, 'login'])->name('login');
+Route::get('/register', [AuthController::class, 'register'])->name('register');
+
+// Autenticação
+Route::post('/login', [AuthController::class, 'authenticate']);
+Route::post('/register', [AuthController::class, 'store']);
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+// Rotas para alunos (área protegida por auth)
+Route::middleware('auth')->group(function () {
+    Route::get('/area-aluno', [StudentController::class, 'dashboard'])->name('aluno.dashboard');
+    Route::get('/meus-cursos', [StudentController::class, 'meusCursos'])->name('aluno.cursos');
+    Route::get('/curso/{id}', [StudentController::class, 'verCurso'])->name('aluno.curso.detalhe');
+    Route::get('/frequencia', [StudentController::class, 'frequencia'])->name('aluno.frequencia');
+    Route::get('/nota', [StudentController::class, 'nota'])->name('aluno.nota');
 });
 
-// rotas do dashboard
-Route::middleware('auth')->group(function () { // Método middleware para verificar se o usuário está logado
-    Route::resource('users', UserController::class); // Método resource para gerenciar usuários por meio das 4 funções crud
-    Route::get('/dashboard', [UserController::class, 'index'])->name('dashboard');
-    Route::get('/home', [UserController::class, 'index'])->name('home'); // Método get para gerenciar usuários e redirecionar para a página de dashboard
-    Route::post('logout', [AuthController::class, 'logout'])->name('logout'); // Método post para fazer logout
+// Rotas para professores
+Route::middleware(['auth', 'role:professor'])->group(function () {
+    Route::get('/area-professor', [TeacherController::class, 'dashboard'])->name('professor.dashboard');
+    Route::get('/aulas', [TeacherController::class, 'aulas'])->name('professor.aulas');
+    Route::get('/aula/{id}', [TeacherController::class, 'detalheAula'])->name('professor.aula.detalhe');
+    Route::get('/frequencia', [TeacherController::class, 'frequenciaGeral'])->name('professor.frequencia');
+    Route::get('/nota', [TeacherController::class, 'notaGeral'])->name('professor.nota');
 });
 
-// rotas de login e registro
-Route::get('login', [AuthController::class, 'showLoginForm'])->name('login'); // Método get para exibir a página de login
-Route::post('login', [AuthController::class, 'login']); // Método post para fazer login
-Route::get('register', [AuthController::class, 'showRegisterForm'])->name('register');  // Método get para exibir a página de registro
-Route::post('register', [AuthController::class, 'register']); // Método post para criar um novo usuário
+// Rotas para administradores
+Route::middleware(['auth', 'role:admin'])->group(function () {
+    Route::get('/dashboard', [UserController::class, 'dashboard'])->name('admin.dashboard');
+    Route::resource('usuarios', UserController::class);
+    Route::resource('cursos', CursoController::class);
+    Route::resource('banners', BannerController::class);
+});
