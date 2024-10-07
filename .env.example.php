@@ -1,0 +1,17 @@
+APP_NAME="sindcomercio-backend"
+APP_ENV=local
+APP_KEY=
+APP_DEBUG=true
+APP_TIMEZONE=UTC
+APP_URL=http://localhost
+
+APP_LOCALE=pt
+APP_FALLBACK_LOCALE=pt
+APP_FAKER_LOCALE=pt_BR
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=school_app
+DB_USERNAME=root
+DB_PASSWORD=root
