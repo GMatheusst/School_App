@@ -7,7 +7,7 @@ use App\Http\Requests\UpdateCursoRequest;
 use App\Models\Curso;
 use App\Http\Requests\StoreUpdateCursoRequest;
 
-class CursOController extends Controller
+class CourseController extends Controller
 {
     public function store(StoreCursoRequest $request)
     {
