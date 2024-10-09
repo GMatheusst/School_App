@@ -1,24 +1,29 @@
 <?php
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BannerController;
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\CursOController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Route;
 
 // Rotas para usuários não autenticados
-Route::get('/', [BannerController::class, 'index'])->name('home');
-Route::get('/cursos', [CursoController::class, 'index'])->name('cursos');
+
+// Página Inicial - Usuários não autenticados e autenticados
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::get('/cursos', [CourseController::class, 'index'])->name('cursos');
 Route::get('/sobre', function () {
     return view('about'); // Página estática
 });
-Route::get('/login', [AuthController::class, 'login'])->name('login');
-Route::get('/register', [AuthController::class, 'register'])->name('register');
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
 
 // Autenticação
-Route::post('/login', [AuthController::class, 'authenticate']);
-Route::post('/register', [AuthController::class, 'store']);
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/register', [AuthController::class, 'register']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // Rotas para alunos (área protegida por auth)
@@ -43,6 +48,6 @@ Route::middleware(['auth', 'role:professor'])->group(function () {
 Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/dashboard', [UserController::class, 'dashboard'])->name('admin.dashboard');
     Route::resource('usuarios', UserController::class);
-    Route::resource('cursos', CursoController::class);
+    Route::resource('cursos', CourseController::class);
     Route::resource('banners', BannerController::class);
 });

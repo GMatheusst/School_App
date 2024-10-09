@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreLoginRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
@@ -16,12 +17,12 @@ class LoginController extends Controller
     }
 
     // Lida com a tentativa de login
-    public function login(Request $request)
+    public function login(StoreLoginRequest $request)
     {
         // Validação dos dados de login
        
         // Tenta autenticar o usuário
-        if (Auth::attempt($request->only('email', 'password'))) {
+        if (Auth::attempt($request->only(   'email', 'password'))) {
             // Redireciona o usuário para a rota correta de acordo com o seu papel
             $role = Auth::user()->role;
 
