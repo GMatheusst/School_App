@@ -1,7 +1,39 @@
-# Documentação
- 
-## Projeto Final
-##### [Front-End](https://rentry.co/SateUrl) Aqui LF
-##### [Back-End](https://rentry.co/SateUrlLaravel) Aqui Necessario analise para refatoração 
-##### [Tabela](https://rentry.co/SateUrlBackEnd) Aqui Ok
+# Comandos Para rodar a aplicação Localmente
 
+### Clonar repositorio
+```bash
+git clone https://github.com/GMatheusst/School_App
+```
+
+### Localizar repositorio
+```bash
+cd School_App
+```
+
+### Baixar Dependencias do laravel
+```bash
+composer i
+```
+
+### Gerar as tabelas
+```bash
+php artisan migrate
+```
+
+### Gerar as chaves
+
+```
+php artisan key:generate
+```
+
+### Ligar as filas
+
+```bash
+php artisan queue:work
+
+```
+
+### Ligar o servidor
+```
+php artisan serve
+```
