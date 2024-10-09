@@ -16,10 +16,10 @@ class UserController extends Controller
 
     public function index()
     {
-        $users = User::all(); // Obtém todos os usuários
+        
         $currentUser = Auth::user(); // Obtém o usuário atual
-
-        return view('dashboard', compact('users', 'currentUser')); // Retorna a página de dashboard
+        $usuarios = User::all();
+        return view('usuarios.index', compact('usuarios', 'currentUser')); // Retorna a página de dashboard
     }
 
     // metodo edit retorna a página de edição de um usuário
@@ -30,23 +30,48 @@ class UserController extends Controller
 
         return view('home', compact('users', 'currentUser')); // Retorna a página de dashboard
     }
-
-
-    // metodo update atualiza os dados de um usuário
-    public function update(UpdateUserRequest $request, User $user)
+    public function store(Request $request)
     {
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|string|min:8',
+            'access_level' => 'required|integer',
+        ]);
+
+        $validatedData['password'] = bcrypt($validatedData['password']); // Criptografa a senha
+
+        User::create($validatedData);
+
+        return redirect()->route('usuarios.index')->with('success', 'Usuário criado com sucesso!');
+    }
+    public function edit(User $usuario)
+    {
+        return view('usuarios.edit', compact('usuario'));
+    }
+    // metodo update atualiza os dados de um usuário
+    public function update(UpdateUserRequest $request, $id)
+    {
+        $user = User::findOrFail($id);
         $this->authorize('update', $user); // Certifique-se de que apenas admins possam acessar isso
+
 
         $user->update($request->validated());
 
-        return redirect()->route('dashboard')->with('success', 'Usuário atualizado com sucesso!'); // Redireciona para a página de dashboard com sucesso
+        return redirect()->route('usuarios.index')->with('success', 'Usuário atualizado com sucesso!');
     }
 
     // metodo destroy apaga um usuário
-    public function destroy(User $user)
+    public function destroy(User $id)
     {
+        $user = User::findOrFail($id);
+        
         $user->delete(); // Apaga o usuário
 
-        return redirect('dashboard')->with('success', 'Usuário deletado com sucesso.'); // Redireciona para a página de dashboard com sucesso
+        return redirect()->route('usuarios.index')->with('success', 'Usuário excluído com sucesso!');
+    }
+    public function dashboard()
+    {
+        return view('admin.dashboard');
     }
 }

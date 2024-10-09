@@ -32,7 +32,7 @@
                         @else
                             @if(Auth::user()->isAdmin())
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/dashboard-admin">Dashboard</a>
+                                    <a class="nav-link" href="/dashboard">Dashboard</a>
                                 </li>
                             @elseif(Auth::user()->isTeacher())
                                 <li class="nav-item">
@@ -40,7 +40,7 @@
                                 </li>
                             @else
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/dashboard-aluno">Área do Aluno</a>
+                                    <a class="nav-link" href="/area-aluno">Área do Aluno</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="/carrinho">Carrinho</a>

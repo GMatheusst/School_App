@@ -20,8 +20,7 @@ class AuthController extends Controller
     // metodo login verifica se o usuário está logado
     public function login(Request $request)
     {
-        $credentials = $request->only('email', 'password'); // Obtém as credenciais do usuário
-
+        
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             // Se a autenticação for bem-sucedida
             $user = Auth::user();

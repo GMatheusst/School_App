@@ -10,7 +10,7 @@ class HomeController extends Controller
     public function index()
     {
         // Recupera cursos em destaque
-        $cursos = Curso::orderBy('created_at', 'desc')->take(6)->get();  // Exibe 6 cursos mais recentes
+        $cursos = Curso::all();
 
         return view('index', compact('cursos'));
     }

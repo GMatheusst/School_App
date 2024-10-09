@@ -3,12 +3,15 @@ namespace App\Http\Controllers;
 
 use App\Jobs\GenerateMediaGeralGraph;
 use App\Models\Aluno; 
-use App\Models\Student;// Certifique-se de ter o modelo Aluno importado
+use App\Models\Student; // Certifique-se de ter o modelo Aluno importado
+use Illuminate\Support\Facades\Log;
 
 class MediaGeralController extends Controller
 {
     public function calcularMediaGeral()
     {
+        Log::info('Função calcularMediaGeral foi chamada');
+
         // Exemplo: Obtendo todos os alunos para calcular a média
         $alunos = Student::all();
         $data = [];

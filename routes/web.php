@@ -25,11 +25,11 @@ Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('regi
 // Autenticação
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/register', [AuthController::class, 'register']);
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // Rotas para alunos (área protegida por auth)
-Route::middleware(['auth', 'aluno'])->group(function () {
-    Route::get('/area-aluno', [StudentController::class, 'dashboard'])->name('aluno.dashboard');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/area-aluno', [StudentController::class, 'dashboard'])->name('student.dashboard');
     Route::get('/meus-cursos', [StudentController::class, 'meusCursos'])->name('aluno.cursos');
     Route::get('/curso/{id}', [StudentController::class, 'verCurso'])->name('aluno.curso.detalhe');
     Route::get('/frequencia', [StudentController::class, 'frequencia'])->name('aluno.frequencia');
@@ -37,7 +37,7 @@ Route::middleware(['auth', 'aluno'])->group(function () {
 });
 
 // Rotas para professores
-Route::middleware(['auth', 'professor'])->group(function () {
+Route::middleware(['auth'])->group(function () {
     Route::get('/area-professor', [TeacherController::class, 'dashboard'])->name('professor.dashboard');
     Route::get('/aulas', [TeacherController::class, 'aulas'])->name('professor.aulas');
     Route::get('/aula/{id}', [TeacherController::class, 'detalheAula'])->name('professor.aula.detalhe');
@@ -46,7 +46,7 @@ Route::middleware(['auth', 'professor'])->group(function () {
 });
 
 // Rotas para administradores
-Route::middleware(['auth', 'admin'])->group(function () {
+Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [UserController::class, 'dashboard'])->name('admin.dashboard');
     Route::resource('usuarios', UserController::class);
     Route::resource('cursos', CourseController::class);
