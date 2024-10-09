@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreRegisterRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,15 +19,8 @@ class RegisterController extends Controller
     }
 
     // Lida com o registro de um novo usuário
-    public function register(Request $request)
+    public function register(StoreRegisterRequest $request)
     {
-        // Validação dos dados de registro
-        $this->validate($request, [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:8|confirmed',
-            'role' => 'required|in:aluno,professor', // Escolha do papel (aluno ou professor)
-        ]);
 
         // Criação do novo usuário
         $user = User::create([

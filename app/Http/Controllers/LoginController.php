@@ -19,11 +19,7 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         // Validação dos dados de login
-        $this->validate($request, [
-            'email' => 'required|email',
-            'password' => 'required|string',
-        ]);
-
+       
         // Tenta autenticar o usuário
         if (Auth::attempt($request->only('email', 'password'))) {
             // Redireciona o usuário para a rota correta de acordo com o seu papel
