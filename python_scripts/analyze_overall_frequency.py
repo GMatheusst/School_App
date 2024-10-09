@@ -1,11 +1,17 @@
-import pandas as pd
 import matplotlib.pyplot as plt
-from sqlalchemy import create_engine
+import numpy as np
 
-engine = create_engine('mysql://root:root@localhost/school_app')
-df = pd.read_sql('SELECT AVG(frequency) AS average FROM student_points GROUP BY student_id', engine)
+# Simulando dados para o exemplo
+alunos = ['Aluno 1', 'Aluno 2', 'Aluno 3', 'Aluno 4', 'Aluno 5']
+notas = [7.5, 8.0, 6.5, 9.0, 8.5]  # Exemplo de notas
 
-# Análise da média de frequência
-plt.plot(df['average'])
-plt.title('Média de Frequência dos Alunos')
-plt.show()
+# Criando o gráfico
+plt.bar(alunos, notas, color='blue')
+plt.axhline(y=np.mean(notas), color='red', linestyle='--')  # Linha da média
+plt.title('Média Geral dos Alunos')
+plt.xlabel('Alunos')
+plt.ylabel('Notas')
+plt.ylim(0, 10)
+
+# Salvando o gráfico
+plt.savefig('media_geral.png')  # Salva a imagem no mesmo diretório

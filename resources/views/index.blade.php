@@ -26,7 +26,7 @@
                         <p><strong>Tempo de Conclusão:</strong> {{ $curso->tempo_conclusao }} dias</p>
                         <p><strong>Preço:</strong> R$ {{ number_format($curso->preco, 2, ',', '.') }}</p>
                         
-                        @if(Auth::check() && Auth::user()->access_level === 1)
+                        @if(Auth::check() && Auth::user()->access_level > 0 )
                             <a href="{{ route('carrinho.adicionar', $curso->id) }}" class="btn btn-primary mt-auto">Adicionar ao Carrinho</a>
                         @else
                             <a href="{{ route('cursos.show', $curso->id) }}" class="btn btn-outline-secondary mt-auto">Ver Detalhes</a>

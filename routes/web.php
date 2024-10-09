@@ -2,8 +2,9 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\CourseController;
-use App\Http\Controllers\CursOController;
+use App\Http\Controllers\MediaGeralController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\GraphController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
@@ -27,7 +28,7 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // Rotas para alunos (área protegida por auth)
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth', 'aluno'])->group(function () {
     Route::get('/area-aluno', [StudentController::class, 'dashboard'])->name('aluno.dashboard');
     Route::get('/meus-cursos', [StudentController::class, 'meusCursos'])->name('aluno.cursos');
     Route::get('/curso/{id}', [StudentController::class, 'verCurso'])->name('aluno.curso.detalhe');
@@ -36,7 +37,7 @@ Route::middleware('auth')->group(function () {
 });
 
 // Rotas para professores
-Route::middleware(['auth', 'role:professor'])->group(function () {
+Route::middleware(['auth', 'professor'])->group(function () {
     Route::get('/area-professor', [TeacherController::class, 'dashboard'])->name('professor.dashboard');
     Route::get('/aulas', [TeacherController::class, 'aulas'])->name('professor.aulas');
     Route::get('/aula/{id}', [TeacherController::class, 'detalheAula'])->name('professor.aula.detalhe');
@@ -45,9 +46,12 @@ Route::middleware(['auth', 'role:professor'])->group(function () {
 });
 
 // Rotas para administradores
-Route::middleware(['auth', 'role:admin'])->group(function () {
+Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/dashboard', [UserController::class, 'dashboard'])->name('admin.dashboard');
     Route::resource('usuarios', UserController::class);
     Route::resource('cursos', CourseController::class);
     Route::resource('banners', BannerController::class);
 });
+
+Route::get('/frequencia-data', [GraphController::class, 'getFrequenciaData']);
+Route::get('/media-geral', [MediaGeralController::class, 'calcularMediaGeral'])->name('media.geral');

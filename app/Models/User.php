@@ -26,4 +26,20 @@ class User extends Authenticatable
     {
         return $this->hasMany(Order::class);
     }
+    public function isAdmin()
+    {
+        return $this->access_level === 3; // 3 é o nível de acesso para administradores
+    }
+
+    // Método para verificar se o usuário é um professor
+    public function isTeacher()
+    {
+        return $this->access_level === 2; // 2 é o nível de acesso para professores
+    }
+
+    // Método para verificar se o usuário é um aluno
+    public function isAluno()
+    {
+        return $this->access_level === 1; // 1 é o nível de acesso para alunos
+    }
 }
