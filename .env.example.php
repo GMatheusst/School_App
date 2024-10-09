@@ -1,4 +1,4 @@
-APP_NAME="sindcomercio-backend"
+APP_NAME="School_app"
 APP_ENV=local
 APP_KEY=
 APP_DEBUG=true
